@@ -107,21 +107,25 @@ function game()
     
 }
 
+function gamePlay ()
+{
+    btnRock.addEventListener('click', () =>{
+        answerUser = rock;
+        playRound();
+    });
+    
+    btnPaper.addEventListener('click', () =>{
+        answerUser = paper;
+        playRound();
+    });
+    
+    btnScissors.addEventListener('click', () =>{
+        answerUser = scissors;
+        playRound();
+    });
+}
 
-btnRock.addEventListener('click', () =>{
-    answerUser = rock;
-    playRound();
-});
-
-btnPaper.addEventListener('click', () =>{
-    answerUser = paper;
-    playRound();
-});
-
-btnScissors.addEventListener('click', () =>{
-    answerUser = scissors;
-    playRound();
-});
+gamePlay();
 
 /*function game()
 {
