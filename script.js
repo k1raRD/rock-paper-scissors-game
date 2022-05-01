@@ -4,12 +4,15 @@ const paper = "Paper";
 let answerUser;
 let answerComputer;
 let confirmRound;
+let scoreUser = 0;
+let scoreComputer = 0;
+const btnRock = document.getElementById('rock');
+const btnPaper = document.getElementById('paper');
+const btnScissors = document.getElementById('scissors');
+const divResult = document.getElementById('container-result');
+const divResultOne = document.createElement('div');
+const divResultTwo = document.createElement('div');
 
-function capitalize(str)
-{
-    str = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    return str;
-}
 
 function computerPlay()
 {
@@ -29,11 +32,9 @@ function computerPlay()
     return answerComputer;
 }
 
-
 function playRound()
 {
     let message;
-    answerUser = capitalize(prompt(`Choose one ${rock}, ${paper} or ${scissors}`));
     answerComputer = computerPlay();
 
     if(answerComputer == answerUser)
@@ -56,48 +57,112 @@ function playRound()
         message = "Do you want hackme?"
         confirmRound = 4;
     }
-    alert(message);
-}
 
+    divResultOne.textContent = message;
+    divResult.appendChild(divResultOne);
+    game();
+}
+    
+function capitalize(str)
+{
+    str = str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    return str;
+}
 
 function game()
 {
-    alert("Welcome to rock paper and scissors!!!");
+    let messageTwo;
+
+     if(confirmRound === 2)
+    {
+        scoreComputer += 1;
+        messageTwo = `Computer score: ${scoreComputer} You score: ${scoreUser}`;
+    }
+    
+    else if(confirmRound === 3)
+    {
+        scoreUser += 1;
+        messageTwo = `Computer score: ${scoreComputer} User score: ${scoreUser}`;
+    }
+    else
+    {
+        messageTwo = `Computer score: ${scoreComputer} User score: ${scoreUser}`;
+    }
+
+    if(scoreUser == 5)
+    {
+        messageTwo = "Congratulations You Win!!!";
+        scoreComputer = 0;
+        scoreUser = 0;
+    }
+    else if(scoreComputer == 5)
+    {
+        messageTwo = "Sorry You lost.....";
+        scoreComputer = 0;
+        scoreUser = 0;
+    }   
+    confirmRound = 0;
+    divResultTwo.textContent = messageTwo;
+    divResult.appendChild(divResultTwo)
+    
+}
+
+
+btnRock.addEventListener('click', () =>{
+    answerUser = rock;
+    playRound();
+});
+
+btnPaper.addEventListener('click', () =>{
+    answerUser = paper;
+    playRound();
+});
+
+btnScissors.addEventListener('click', () =>{
+    answerUser = scissors;
+    playRound();
+});
+
+/*function game()
+{
     let scoreUser = 0;
     let scoreComputer = 0;
+    let messageTwo;
 
     for(let i = 0; i < 5; i++)
     {
-        playRound();
+
+        playGame();
         if(confirmRound === 1 || confirmRound === 4)
         {
             i--
-            alert("No one gets points!!")
+            messageTwo = "No one gets points!!";
         }
         else if(confirmRound === 2)
         {
             scoreComputer += 1;
-            alert(`Computer score: ${scoreComputer} You score: ${scoreUser}`);
+            messageTwo = `Computer score: ${scoreComputer} You score: ${scoreUser}`;
         }
         
         else if(confirmRound === 3)
         {
             scoreUser += 1;
-            alert(`Computer score: ${scoreComputer} User score: ${scoreUser}`);
+            messageTwo = `Computer score: ${scoreComputer} User score: ${scoreUser}`;
         }
 
         if(scoreUser == 3)
         {
-            alert("Congratulations You Win!!!");
+            messageTwo = "Congratulations You Win!!!";
             break;
         }
         else if(scoreComputer == 3)
         {
-            alert("Sorry You lost.....");
+            messageTwo = "Sorry You lost.....";
             break;
         }   
         confirmRound = 0;
+        console.log(messageTwo)
+        divResultTwo.textContent = messageTwo;
+        divResult.appendChild(divResultTwo);
     }
-}
-
-game();
+};*/
