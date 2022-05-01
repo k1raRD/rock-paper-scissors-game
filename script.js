@@ -76,17 +76,17 @@ function game()
      if(confirmRound === 2)
     {
         scoreComputer += 1;
-        messageTwo = `Computer score: ${scoreComputer} You score: ${scoreUser}`;
+        messageTwo = `Computer score: ${scoreComputer} Your score: ${scoreUser}`;
     }
     
     else if(confirmRound === 3)
     {
         scoreUser += 1;
-        messageTwo = `Computer score: ${scoreComputer} User score: ${scoreUser}`;
+        messageTwo = `Computer score: ${scoreComputer} Your score: ${scoreUser}`;
     }
     else
     {
-        messageTwo = `Computer score: ${scoreComputer} User score: ${scoreUser}`;
+        messageTwo = `Computer score: ${scoreComputer} Your score: ${scoreUser}`;
     }
 
     if(scoreUser == 5)
