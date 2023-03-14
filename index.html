@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Rock paper and scissors</title>
-</head>
-<body>
-    <header class="header">
-        <h1>Welcome to Rock-Paper-Scissors</h1>
-    </header>
-    <h2>Chose your weapon</h2>
-    <div class="buttons">
-        <button id="rock">
-            Rock
-        </button>
-        <button id="paper">
-            Paper
-        </button>
-        <button id="scissors">
-            Scissors
-        </button>    
-    </div>
-    <div id="container-result">
-        
-    </div>
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/8e648e5ca8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper and Scissors</title>
+  </head>
+  <body>
+
+    <main class="main">
+      <h1 id="title" class="main-title">Get Started</h1>
+      <div class="container-choices">
+        <div class="userChoices">
+          <div>
+            <p class="score-text">Your score:</p>
+            <p id="userStars"></p>
+          </div>
+          <div class="user-buttons">
+            <button id="rock"  class="userChoice choices" value="rock"><i class="fa-solid fa-hand-fist"></i></button>
+            <button id="paper" class="userChoice choices" value="paper"><i  class="fa-regular fa-hand" ></i></button>
+            <button id="scissors" class="userChoice choices" value="scissors"><i  class="fa-solid fa-hand-peace"></i></button> 
+          </div>
+          <p class="description-text">Take your pick</p>
+        </div>
+        <div class="machineChoices">
+          <div>
+            <p class="score-text">Machine score:</p>
+            <p id="machineStars"></p>
+          </div>
+          <div id="machine-buttons">
+          </div>
+          <p class="description-text">Take your pick</p>
+        </div>
+      </div>
+
+      <div id="resultGame">
+        <p id="resultRoundText"></p>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
 </html>

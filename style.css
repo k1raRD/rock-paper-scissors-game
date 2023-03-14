@@ -1,22 +1,82 @@
-*
-{
-  box-sizing: border-box;
-  margin: 0;
-  border: 0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
-
-background-color: #000;
-color: rgb(213, 213, 22);
-display: flex;
-align-items: center;
-flex-direction: column;
-gap: 12px;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    color: aliceblue;
 }
 
-.buttons
-{
-  display: flex;
-  gap: 5px;
+.main{
+    width: 100%;
+    height: 100%;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+#title{
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.container-choices{
+    width: 100%;
+    display: flex;
+    gap: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChoices, .machineChoices{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.user-buttons, .machine-buttons{
+    display: flex;
+    gap: 50px;
+}
+
+i{
+    font-size: 70px;
+    color: #fff;
+}
+
+#machineStars i, #userStars i{
+    font-size: 20px;
+}
+
+#resultRoundText{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.userChoice{
+    border: none;
+    background-color: transparent;
+}
+
+.userChoice:hover{
+    transform: scale(1.5);
+}
+
+.score-text{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.description-text{
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 400;
 }
